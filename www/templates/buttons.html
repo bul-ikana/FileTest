@@ -1,0 +1,22 @@
+<ion-view title="Load JSON">
+
+  <ion-content class="padding-horizontal">
+    
+      <button class="button button-block button-calm" ng-click="file.openFromLocal()">
+        From app www directory
+      </button>
+
+      <button class="button button-block button-calm">
+        From remote and save in fliesystem
+      </button>
+
+      <button class="button button-block button-calm">
+        From saved filesystem
+      </button>
+
+      <div class="text-center">        
+        <ion-spinner class="spinner-calm text-center" icon="crescent" ng-show="file.spinner"></ion-spinner>
+      </div>
+      
+  </ion-content>
+</ion-view>

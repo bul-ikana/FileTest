@@ -1,0 +1,11 @@
+<ion-view title="Loaded from {{list.source}}">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="cat in list.data" class="item-avatar">
+        <img ng-src="{{cat.thumb}}">
+        <h2>{{cat.name}}</h2>
+        <small>{{cat.gender}}</small>
+      </ion-item>
+    </ion-list> 
+  </ion-content>
+</ion-view>
