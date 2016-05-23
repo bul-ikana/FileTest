@@ -10,11 +10,11 @@
         From remote
       </button>
 
-      <button class="button button-block button-calm">
+      <button class="button button-block button-calm"  ng-click="file.saveFromRemote()">
         From remote and save in filesystem
       </button>
 
-      <button class="button button-block button-calm">
+      <button class="button button-block button-calm" ng-if="file.exists">
         From saved filesystem
       </button>
 
