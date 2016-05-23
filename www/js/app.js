@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
-.run(function($ionicPlatform, $cordovaFile) {
+.run(function($ionicPlatform, $cordovaFile, $rootScope) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -20,12 +20,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
+    $rootScope.exists = false;
     $cordovaFile.checkFile(cordova.file.dataDirectory, "cats.json")
       .then(function(success) {
         console.log(success);
+        $rootScope.exists = true;
       }, function(error) {
         console.log(error);
+        $rootScope.exists = false;
       })
   });
 

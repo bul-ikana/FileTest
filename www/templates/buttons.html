@@ -14,7 +14,7 @@
         From remote and save in filesystem
       </button>
 
-      <button class="button button-block button-calm" ng-if="file.exists">
+      <button class="button button-block button-calm" ng-if="exists" ng-click="file.openFromFilesystem()">
         From saved filesystem
       </button>
 

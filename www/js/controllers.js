@@ -1,11 +1,9 @@
 angular.module('starter.controllers', ['starter.services'])
 
-.controller('FileController', function($scope, $cordovaFile, $state, DataService, $http) {
+.controller('FileController', function($scope, $cordovaFile, $state, DataService, $http, $rootScope) {
 	$scope.file = {};
 
 	$scope.file.spinner = false;
-
-	$scope.file.exists = false;
 
 	$scope.file.openFromLocal = function() {
 		$scope.file.spinner = true;
@@ -43,13 +41,29 @@ angular.module('starter.controllers', ['starter.services'])
 		$http.get('http://hugo.mecabotware.com/files/savecats.json')
 			.then(function (success) {
 				console.log("file read from remote");
-				$cordovaFile.writeFile(cordova.file.dataDirectory, "cats.json", JSON.stringify(success), true)
+				$cordovaFile.writeFile(cordova.file.dataDirectory, "cats.json", JSON.stringify(success.data), true)
 					.then(function (success) {
 						console.log("file saved");
 						console.log(success);
 						$scope.file.spinner = false;
-						$scope.file.exists = true;
+						$rootScope.exists = true;
 					})
+			}, function (error) {
+				$scope.file.spinner = false;
+				console.log(error)
+			});
+	}
+
+	$scope.file.openFromFilesystem = function() {
+		$scope.file.spinner = true;
+
+		$cordovaFile.readAsText(cordova.file.dataDirectory, "cats.json")
+			.then( function(success) {
+				console.log(success);
+				DataService.data = JSON.parse(success);
+				DataService.source = "File System";
+				$scope.file.spinner = false;
+				$state.go("list");
 			}, function (error) {
 				$scope.file.spinner = false;
 				console.log(error)
