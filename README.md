@@ -20,8 +20,8 @@ FileTest populates a list from 3 different sources:
 3. Remote JSON file located in a server of mine, intended to be saved to file system and be read from there.
 
 ##Screenshots
-![](https://raw.githubusercontent.com/bul-ikana/FileTest/master/docs/img/c1.png)
-![](https://raw.githubusercontent.com/bul-ikana/FileTest/master/docs/img/c2.png)
+![](docs/img/c1.png)
+![](docs/img/c2.png)
 
 ## Dependencies.
 
