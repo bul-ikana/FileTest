@@ -19,6 +19,10 @@ FileTest populates a list from 3 different sources:
 2. Remote JSON file located in a server of mine, used just for reference
 3. Remote JSON file located in a server of mine, intended to be saved to file system and be read from there.
 
+##Screenshots
+![](https://raw.githubusercontent.com/bul-ikana/FileTest/master/docs/img/c1.png)
+![](https://raw.githubusercontent.com/bul-ikana/FileTest/master/docs/img/c2.png)
+
 ## Dependencies.
 
 To run this project you need
@@ -27,7 +31,7 @@ To run this project you need
 * Android SDK (for android)
 * Xcode and a mac (for iOS)
 * [Ionic CLI](http://ionicframework.com/getting-started/)
-* A physical device or emulator
+* A physical device or emulator, as plugin won't run on browser
 
 ##Installation
 
